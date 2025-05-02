@@ -18,10 +18,7 @@ while(len(guessed_states) < 28):
     answer_state = screen.textinput(title="Guess the State",prompt="What's another state's name ?").title()
 
     if answer_state == 'Exit':
-        missed_states = []
-        for state in all_states:
-            if state not in guessed_states:
-                missed_states.append(state)
+        missed_states = [state for state in all_states if state not in guessed_states]
         #Printing the missed states to cross-check
         print(missed_states)
         new_data = pandas.DataFrame(missed_states)
