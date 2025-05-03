@@ -15,7 +15,7 @@ guessed_states = []
 
 #The loop will not stop until user tells name of all states or types "exit" 
 while(len(guessed_states) < 28):
-    answer_state = screen.textinput(title="Guess the State",prompt="What's another state's name ?").title()
+    answer_state = screen.textinput(title=f"{len(guessed_states)}/28 States are correct",prompt="What's another state's name ?").title()
 
     if answer_state == 'Exit':
         missed_states = [state for state in all_states if state not in guessed_states]
